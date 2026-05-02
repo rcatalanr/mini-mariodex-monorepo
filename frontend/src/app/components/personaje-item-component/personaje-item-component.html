@@ -1,0 +1,28 @@
+<div class="modal-body">
+    @if (selectedPersonaje) {
+    <div class="d-flex flex-column align-items-center gap-3">
+        <img [src]="selectedPersonaje.imgUrl" [alt]="selectedPersonaje.name" class="img-fluid"
+            style="max-height: 220px;" />
+
+        <div class="text-center">
+            <h4 class="fw-bold mb-2">{{ selectedPersonaje.name }}</h4>
+            <p class="mb-1"><b>Tipo:</b> {{ selectedPersonaje.type }}</p>
+            @if(selectedPersonaje.levelPower){
+            <p class="mb-1"><b>Poder:</b> {{ selectedPersonaje.levelPower }} kg</p>
+            }
+        </div>
+    </div>
+    } @else {
+    <p>No hay Pokémon seleccionado.</p>
+    }
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" [disabled]="!selectedPersonaje?.id" (click)="requestDelete()">
+        Eliminar
+    </button>
+
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Cerrar
+    </button>
+</div>

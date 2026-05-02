@@ -1,0 +1,26 @@
+<form action="submit">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="personajeName"
+            placeholder="Escriba el nombre del Personaje" [(ngModel)]="personajeName">
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo </label>
+        <select name="personajeType" id="personajeType" class="form-select form-select-lg" [(ngModel)]="personajeType">
+            <option value="heroe">Héroe</option>
+            <option value="aliado">Aliado</option>
+            <option value="jefeFinal">Jefe final</option>
+            <option value="enemigo">enemigo</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="nivel" class="form-label">Nivel</label>
+        <input type="text" class="form-control" id="nivel" name="personajeLevel"
+            placeholder="Escriba el nombre del Personaje" [(ngModel)]="personajeLevel">
+    </div>
+    <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen del personaje</label>
+        <input type="text" class="form-control" id="imagen" name="personajeImageUrl" placeholder="URL de la imagen"
+            [(ngModel)]="personajeImageUrl">
+    </div>
+</form>

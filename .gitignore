@@ -1,0 +1,17 @@
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.env
+
+# Laravel
+backend/vendor/
+backend/.env
+backend/storage/logs/*.log
+backend/database/database.sqlite
+
+# General
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
