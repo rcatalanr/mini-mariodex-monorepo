@@ -17,7 +17,7 @@ export class NuevoPersonajeComponent {
   personajeType!: string;
   personajeImageUrl!: string;
   personajeLevel!: number;
-  personajeWorld!: string;
+
   @Output() onSaveSuccess = new EventEmitter<Personaje>();
 
 
@@ -27,7 +27,7 @@ export class NuevoPersonajeComponent {
     const newPersonaje: Personaje = {
       name: this.personajeName,
       type: this.personajeType,
-      world: this.personajeWorld,
+      world: 'Mario World',
       levelPower: this.personajeLevel,
       imgUrl: this.personajeImageUrl
     };

@@ -9,7 +9,7 @@ import { Personaje } from "../models/ts/personaje.model";
 
 
 export class MarioService {
-  baseUrl: string = '/api/personajes';
+  baseUrl: string = 'http://localhost:8000/api/personajes';
 
   constructor(private http: HttpClient) { }
 
