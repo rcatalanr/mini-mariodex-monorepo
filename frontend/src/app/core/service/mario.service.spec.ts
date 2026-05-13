@@ -8,6 +8,8 @@ import { Personaje } from '../models/ts/personaje.model';
 describe('MarioService', () => {
   let service: MarioService;
   let httpMock: HttpTestingController;
+  const API_URL = 'https://mini-mariodex-monorepo.onrender.com/api/personajes';
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -46,7 +48,7 @@ describe('MarioService', () => {
       expect(personajes).toEqual(mockPersonajes);
     });
 
-    const req = httpMock.expectOne('/api/personajes');
+    const req = httpMock.expectOne(API_URL);
     expect(req.request.method).toBe('GET');
 
     req.flush(mockPersonajes);
@@ -70,7 +72,7 @@ describe('MarioService', () => {
       expect(personaje).toEqual(personajeCreado);
     });
 
-    const req = httpMock.expectOne('/api/personajes');
+    const req = httpMock.expectOne(API_URL);
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(nuevoPersonaje);
 
@@ -82,7 +84,7 @@ describe('MarioService', () => {
       expect(response).toBeNull();
     });
 
-    const req = httpMock.expectOne('/api/personajes/1');
+    const req = httpMock.expectOne(`${API_URL}/1`);
     expect(req.request.method).toBe('DELETE');
 
     req.flush(null);
@@ -96,7 +98,7 @@ describe('MarioService', () => {
       }
     });
 
-    const req = httpMock.expectOne('/api/personajes');
+    const req = httpMock.expectOne(API_URL);
     expect(req.request.method).toBe('GET');
 
     req.flush(
